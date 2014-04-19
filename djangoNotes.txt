@@ -1,0 +1,15 @@
+# to create a new Django project:
+django-admin.py startproject [project_name]
+e.g.
+django-admin.py startproject django_test
+
+# how to access django video tutorials by Mike Hibbert on Youtube. An index of
+# these videos is available on https://www.djangoproject.com
+# https://www.djangoproject.com
+# click on "code"
+# https://code.djangoproject.com
+# Django resources page
+# https://code.djangoproject.com/wiki/DjangoResources
+# Tutorials on the web -> A list of Django tutorials
+# https://code.djangoproject.com/wiki/Tutorials
+# Intuitive 20 video tutorial series for Django beginners
