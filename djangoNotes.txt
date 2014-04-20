@@ -14,3 +14,12 @@ django-admin.py startproject django_test
 # https://code.djangoproject.com/wiki/Tutorials
 # Intuitive 20 video tutorial series for Django beginners
 
+/Users/mitchell/git/DjangoPractice/django_test/storage.db
+# This is the location of my sqlite3 database.
+
+# Let's Make An App:
+python manage.py startapp [app name]
+python manage.py startapp article
+
+# This is what my django database line in settings.py looks like:
+'NAME': os.path.join('/Users/mitchell/git/DjangoPractice/django_test/', 'storage.db')
