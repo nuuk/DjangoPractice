@@ -13,3 +13,4 @@ django-admin.py startproject django_test
 # Tutorials on the web -> A list of Django tutorials
 # https://code.djangoproject.com/wiki/Tutorials
 # Intuitive 20 video tutorial series for Django beginners
+
