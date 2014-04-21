@@ -23,3 +23,48 @@ python manage.py startapp article
 
 # This is what my django database line in settings.py looks like:
 'NAME': os.path.join('/Users/mitchell/git/DjangoPractice/django_test/', 'storage.db')
+
+cd /Users/mitchell/git/DjangoPractice/django_test
+
+# Create the database:
+python manage.py syncdb
+
+# superuser password: kernel
+
+# SQLite Database Browser
+# SQLite Professional Read-Only
+
+# Make sure that you add "articles" in your "INSTALLED_APPS" array in your
+# settings.py. "articles" is the name of your app.
+
+# If you don't have permissions to create tables through django, 
+
+python manage.py sql [app name]
+python manage.py sql article
+
+# you will get a print out like this:
+BEGIN;
+CREATE TABLE "article_article" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "title" varchar(200) NOT NULL,
+    "body" text NOT NULL,
+    "pub_date" datetime NOT NULL,
+    "likes" integer NOT NULL
+)
+;
+
+COMMIT;
+
+# which you can copy and paste as you need to a different terminal where you
+# DO have access to the database.
+
+# If you decide that you're going to change the article model, and/or any of
+# the fields within it, take note:
+# It's difficult to change stuff BEFORE you insert "articles" in
+# "INSTALLED_APPS" in models.py
+
+# Start watching Python Django tutorial 2 settings.py and database models at
+# Minute 20
+
+# Possible Future Reading: https://docs.djangoproject.com/en/1.6/
+# read Models -> Field Types
