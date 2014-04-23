@@ -58,13 +58,77 @@ COMMIT;
 # which you can copy and paste as you need to a different terminal where you
 # DO have access to the database.
 
-# If you decide that you're going to change the article model, and/or any of
-# the fields within it, take note:
-# It's difficult to change stuff BEFORE you insert "articles" in
-# "INSTALLED_APPS" in models.py
-
 # Start watching Python Django tutorial 2 settings.py and database models at
 # Minute 20
 
 # Possible Future Reading: https://docs.djangoproject.com/en/1.6/
 # read Models -> Field Types
+
+# If you decide that you're going to change the article model, and/or any of
+# the fields within it, take note:
+# It's difficult to change stuff BEFORE you insert "articles" in
+# "INSTALLED_APPS" in models.py. But if you have to make a change, this is how
+# you would go about doing it:
+python manage.py reset [app]
+python manage.py reset article
+# This will remove the 'article' table from inside the database.
+
+# Book Mark:
+https://www.youtube.com/watch?v=D5VlpgEVVg4&t=22m0s
+
+python manage.py shell
+>>> from article.models import Article
+
+# This will list all of the objects in there:
+>>> Article.objects.all()
+
+# We have to make sure we use the timezone settings, the same one we inputted
+# onto settings.py
+>>> from django.utils import timezone
+
+# Let's create some objects:
+>>> a = Article(title="Test 1", body="blah", pub_date=timezone.now(), likes=0)
+
+# If you want to print the instance of Article a, you simply just type "a"
+# on the python command line.
+>>> a
+
+# This is the way you save this instance:
+>>> a.save()
+
+# Let's figure out the id of the instance:
+>>> a.id
+1
+
+# Let's create another:
+>>> a = Article(title="Test 2", body="blah", pub_date=timezone.now(), likes=0)
+>>> a.save()
+>>> a.id
+2
+
+# And let's create another:
+>>> a = Article(title="Test 3", body="blah", pub_date=timezone.now(), likes=0)
+>>> a.save()
+>>> a.id
+3
+
+# Let's pull all 3 objects that we have saved into the database:
+>>> Article.objects.all()
+[<Article: Article object>, <Article: Article object>, <Article: Article object>]
+
+# However, that didn't give us much of a chance to tell which one is which. In
+# order to do that, we can insert the following code inside models.py of
+# the article module, inside the Article class:
+def __unicode__(self):
+    return self.title
+
+# Now, if you insert that code and save models.py, and do again:
+python manage.py shell
+# Make sure that you import Article again:
+from article.models import Article
+# Now if you run:
+>>> Article.objects.all()
+[<Article: Test 1>, <Article: Test 2>, <Article: Test 3>]
+
+# Bookmark:
+https://www.youtube.com/watch?v=7qiq8gnSrxg
