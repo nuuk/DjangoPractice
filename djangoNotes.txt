@@ -132,3 +132,22 @@ from article.models import Article
 
 # Bookmark:
 https://www.youtube.com/watch?v=7qiq8gnSrxg
+
+# This is how you run the development server:
+python manage.py runserver
+
+# Your view goes in this text file: django_test/article/views.py
+#          # Or for a more generic: [project_name]/[app_name]/views.py
+
+# Your URL goes here: /django_test/django_test/urls.py
+#                     /[project_name]/[project_name]/urls.py
+
+# CREATE a templates folder here: /Users/mitchell/git/DjangoPractice/django_test
+# this is on the same level as these files/folders:
+# article
+# django_test
+# manage.py
+# storage.db
+
+# Bookmark:
+https://www.youtube.com/watch?v=7qiq8gnSrxg&t=7m1s
