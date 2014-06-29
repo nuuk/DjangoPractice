@@ -24,13 +24,12 @@ python manage.py startapp article
 # This is what my django database line in settings.py looks like:
 'NAME': os.path.join('/Users/mitchell/git/DjangoPractice/django_test/', 'storage.db')
 
-cd /Users/mitchell/git/DjangoPractice/django_test
-
 # Create the database:
 python manage.py syncdb
 
 # superuser password: kernel
 
+# These are the possible products I could use to look at my database:
 # SQLite Database Browser
 # SQLite Professional Read-Only
 
@@ -142,7 +141,8 @@ python manage.py runserver
 # Your URL goes here: /django_test/django_test/urls.py
 #                     /[project_name]/[project_name]/urls.py
 
-# CREATE a templates folder here: /Users/mitchell/git/DjangoPractice/django_test
+# CREATE a templates folder here:
+# /Users/mitchell/git/DjangoPractice/django_test
 # this is on the same level as these files/folders:
 # article
 # django_test
