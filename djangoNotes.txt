@@ -57,9 +57,6 @@ COMMIT;
 # which you can copy and paste as you need to a different terminal where you
 # DO have access to the database.
 
-# Start watching Python Django tutorial 2 settings.py and database models at
-# Minute 20
-
 # Possible Future Reading: https://docs.djangoproject.com/en/1.6/
 # read Models -> Field Types
 
@@ -71,9 +68,6 @@ COMMIT;
 python manage.py reset [app]
 python manage.py reset article
 # This will remove the 'article' table from inside the database.
-
-# Book Mark:
-https://www.youtube.com/watch?v=D5VlpgEVVg4&t=22m0s
 
 python manage.py shell
 >>> from article.models import Article
@@ -129,9 +123,6 @@ from article.models import Article
 >>> Article.objects.all()
 [<Article: Test 1>, <Article: Test 2>, <Article: Test 3>]
 
-# Bookmark:
-https://www.youtube.com/watch?v=7qiq8gnSrxg
-
 # This is how you run the development server:
 python manage.py runserver
 
@@ -148,6 +139,35 @@ python manage.py runserver
 # django_test
 # manage.py
 # storage.db
+
+# So how do we tell Django where are templates folder is? We do this in the
+# settings.py
+# /Users/mitchell/git/DjangoPractice/django_test/django_test/settings.py
+# According to:
+# https://docs.djangoproject.com/en/1.6/intro/tutorial02/
+# this is how you insert TEMPLATE_DIRS into settings.py:
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+# But instead of square brackets, I'm going to use parentheses just like in
+# Mike Hibbert's tutorial to see what happens.
+# It doesn't seem to matter if it's parentheses or square brackets. This
+# strikes me as a Python thing rather than a Django thing.
+
+# So now, Django knows where our templates directory is. How does Django LOAD
+# a template?
+# In views.py
+# In the top of views.py, you add these lines:
+from django.template.loader import get_template
+from django.template import Context
+
+# Then, you add this new view:
+def hello_template(request):
+    name = "Mitch"
+    t = get_template('hello.html')
+    html = t.render(Context({'name': name}))
+    return HttpResponse(html)
+
+# Then, make sure you give it a url in urls.py, also attaching the new view
+# (function) to that new url.
 
 # Bookmark:
 https://www.youtube.com/watch?v=7qiq8gnSrxg&t=7m1s
