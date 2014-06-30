@@ -170,4 +170,4 @@ def hello_template(request):
 # (function) to that new url.
 
 # Bookmark:
-https://www.youtube.com/watch?v=7qiq8gnSrxg&t=7m1s
+https://www.youtube.com/watch?v=7qiq8gnSrxg&t=12m12s
