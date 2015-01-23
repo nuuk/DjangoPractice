@@ -1,0 +1,17 @@
+http://gettingstartedwithdjango.com/
+
+http://www.fullstackpython.com/django.html
+
+http://www.tangowithdjango.com/
+
+https://www.udemy.com/learn-python-django-from-scratch/
+
+http://appsembler.com/blog/online-resources-for-learning-python-django/
+
+http://www.reddit.com/r/django/comments/1yl1pv/what_is_the_best_way_to_learn_django_in_2014
+
+http://www.quora.com/I-want-to-learn-to-code-Python-and-Django-web-framework-Whats-the-best-way-to-start-for-a-programming-newbie
+
+http://www.jeffknupp.com/blog/2012/12/11/learning-python-via-django-considered-harmful/
+
+http://stackoverflow.com/questions/4048973/whats-the-best-way-to-start-learning-django
